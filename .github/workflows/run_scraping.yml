@@ -2,7 +2,7 @@ name: Scraping y Telegram
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # Ejecutar cada 30 minutos
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,14 +12,18 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Instalar Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
       - name: Instalar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Instalar dependencias
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Ejecutar scraping y enviar Telegram
         env:
