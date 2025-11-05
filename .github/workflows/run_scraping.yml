@@ -12,6 +12,11 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Instalar Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
       - name: Instalar Python
         uses: actions/setup-python@v5
         with:
