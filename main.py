@@ -11,6 +11,11 @@ import requests
 # Configurar para que funcione sin abrir ventana (headless)
 options = Options()
 options.headless = True
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--disable-gpu')
+options.add_argument('--window-size=1920,1080')
+options.add_argument('--remote-debugging-port=9222')
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 url = r'https://tramites.munistgo.cl/reservahoralicencia/?__LASTFOCUS=&__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=DRyytXmkvqsRNHqLnD77wUFvoWgwNPDen18LuIUw8EHQgzunfh8Ng7MZTtm%2FOzPNbkb7FsU8DH33LIdBWNp4KdRC47t2gEkj%2Bqn8YhlbrcvtN9Y0x8c3pTR9l29AXYhYpGuO6h%2FWpVy14zXpo4h9PQ%3D%3D&__VIEWSTATEGENERATOR=341EAED8&__EVENTVALIDATION=dqb2ZBLIMlA5Gj4vvxxIpK%2BYsqL1sVGDaIV%2FNemQNn7IWj1dQ8a%2BnwgXKq%2FRMg2EsrjHfCiL4POTlsOIivKEJkhUWvZkrPLZ4YW5sRgq%2FBCaj4DPai9TSwj8C7dNu2PwMxHb24WHhJr9%2BPx9hDmYSg%3D%3D&txtLogin='
