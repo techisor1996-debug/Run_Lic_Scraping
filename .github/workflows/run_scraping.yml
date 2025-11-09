@@ -2,7 +2,11 @@ name: Scraping y Telegram
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # Cada minuto desde 23:55 a 00:30
+    - cron: '55-59 23 * * *'   # 23:55 a 23:59
+    - cron: '0-30 0 * * *'     # 00:00 a 00:30
+    # Cada 5 minutos desde 07:00 a 09:30
+    - cron: '*/5 7-9 * * *'
   workflow_dispatch:
 
 jobs:
