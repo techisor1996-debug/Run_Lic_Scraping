@@ -2,8 +2,8 @@ name: Scraping y Telegram
 
 on:
   schedule:
-    # Ventana amplia en UTC que cubre 23:55–00:30 CL, ejecuta cada minuto
-    - cron: '* 2-3 * * *'   # cada minuto 02:00–03:59 UTC
+    - cron: '55-59 2 * * *'  # 23:55–23:59 CL
+    - cron: '0-30 3 * * *'   # 00:00–00:30 CL
   workflow_dispatch:
 
 jobs:
